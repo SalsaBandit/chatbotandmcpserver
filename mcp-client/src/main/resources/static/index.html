@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chatbot-container">
+        <div class="chat-header">
+            MCP Chatbot
+        </div>
+        <!-- Connection state is rendered by script.js after it queries the session-scoped MCP API. -->
+        <div class="auth-bar">
+            <span id="authStatus">Add an MCP server to authorize and use its tools.</span>
+        </div>
+        <!-- Submitting this form creates an OAuth client registration before the browser is redirected. -->
+        <form class="login-panel" id="mcpForm">
+            <h2>Connect an MCP server</h2>
+            <p class="login-helper">The server's OAuth provider opens after it is added.</p>
+            <label class="login-field" for="mcpName">
+                Name
+                <input id="mcpName" name="name" type="text" placeholder="Google Drive" required>
+            </label>
+            <label class="login-field" for="mcpUrl">
+                Streamable HTTP MCP URL
+                <input id="mcpUrl" name="serverUrl" type="url" placeholder="https://example.com/mcp" required>
+            </label>
+            <p class="login-error" id="mcpError" hidden></p>
+            <button class="send-btn login-btn" id="mcpBtn" type="submit">Add and authorize</button>
+        </form>
+        <!-- Each item links to the local authorization endpoint until its server token is available. -->
+        <div class="mcp-list" id="mcpList" hidden></div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input-container">
+            <textarea
+                class="chat-input"
+                id="userInput"
+                placeholder="Type your message..."
+                rows="1"
+            ></textarea>
+            <button class="send-btn" id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

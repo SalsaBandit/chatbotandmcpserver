@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: mcp-server
+
+  datasource:
+    # ExpenseTools reads and writes this PostgreSQL database through PersonRepository.
+    url: jdbc:postgresql://localhost:5432/infobase
+    username: avi
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  ai:
+    mcp:
+      server:
+        # The web application exposes MCP over synchronous, stateless Streamable HTTP at /mcp.
+        type: SYNC
+        protocol: STATELESS
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+
+server:
+  # This port also supplies the default OAuth issuer used in discovery, redirects, and token validation links.
+  port: 8060
+  servlet:
+    session:
+      cookie:
+        name: MCP_SERVER_SESSION
+
+mcp:
+  oauth:
+    # This must be externally reachable; MCP clients discover it from protected-resource metadata.
+    issuer-uri: ${MCP_OAUTH_ISSUER_URI:http://localhost:8060}
+    user:
+      email: ${MCP_USER_EMAIL:demo@example.com}
+      password: ${MCP_USER_PASSWORD:password123}
