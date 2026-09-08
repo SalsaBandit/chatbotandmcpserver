@@ -35,11 +35,11 @@ chatbotandmcpserver/
 ## Technology Stack
 
 ### Core Technologies
-- **Java 26**: Modern Java with latest features
-- **Spring Boot 4.1.0**: Full-stack application framework
-- **Spring AI 2.0.0**: AI/LLM integration framework
-- **Spring Security**: Authentication and authorization
-- **OAuth2**: Secure authorization protocol
+- **Java 26**
+- **Spring Boot 4.1.0**
+- **Spring AI 2.0.0**
+- **Spring Security**
+- **OAuth2**
 
 ### Server (mcp-server)
 - **Spring Boot Starter Data JPA**: Database persistence
@@ -47,7 +47,7 @@ chatbotandmcpserver/
 - **Spring Boot Security**: Server-side authentication
 - **OAuth2 Resource Server**: Secure resource protection
 - **OAuth2 Authorization Server**: Token issuance and management
-- **PostgreSQL**: Production database
+- **PostgreSQL**
 - **MCP Server Security**: Custom MCP-specific security library (v0.1.13)
 
 ### Client (mcp-client)
@@ -57,13 +57,6 @@ chatbotandmcpserver/
 - **Spring AI MCP Client**: Model Context Protocol client
 - **Ollama AI Starter**: Local LLM model integration (Ollama)
 - **MCP Client Security**: Custom MCP-specific security library (v0.1.13)
-
-## Language Composition
-
-- **Java**: 80.5%
-- **JavaScript**: 8.4%
-- **CSS**: 7.6%
-- **HTML**: 3.5%
 
 ## Getting Started
 
@@ -118,28 +111,11 @@ cd mcp-client
 - **MCP Client Protocol**: Full MCP client implementation
 - **Dynamic OAuth Support**: MCP-specific OAuth configuration
 
-## Configuration
-
-Configuration files are typically located in `src/main/resources/` for each module (application.yml, application.properties, etc.).
-
 ### Key Configuration Areas
 - Database connection (server)
 - OAuth2 credentials and endpoints
 - Ollama model configuration (client)
 - MCP server/client settings
-
-## Testing
-
-Both modules include comprehensive test suites.
-
-### Run All Tests
-```bash
-# Server tests
-cd mcp-server && ./gradlew test
-
-# Client tests
-cd mcp-client && ./gradlew test
-```
 
 ## Dependencies
 
@@ -161,39 +137,3 @@ The application follows a client-server architecture:
 2. **Security Layer**: OAuth2 handles authentication and authorization
 3. **MCP Client**: Web application that consumes server resources and provides user interface
 4. **AI Integration**: Ollama backend for local LLM processing
-
-## Development
-
-Both modules use:
-- **Java Module Structure**: Package-based organization (com.example.*)
-- **Gradle Build System**: Kotlin DSL for configuration
-- **Spring Boot Conventions**: Standard Spring project layout
-- **Maven Repository**: Central Maven repository for dependencies
-
-## Contributing
-
-When contributing to this project:
-1. Follow Spring Boot conventions
-2. Maintain Java 26+ compatibility
-3. Include unit tests for new features
-4. Use Gradle for building and testing
-
-## License
-
-This project is currently unlicensed. Please check with the project maintainers for license information.
-
-## Repository Info
-
-- **Owner**: SalsaBandit
-- **Repository URL**: https://github.com/SalsaBandit/chatbotandmcpserver
-- **Default Branch**: main
-- **Created**: 44 days ago
-- **Last Updated**: 44 days ago
-
-## Support
-
-For issues, questions, or contributions, please refer to the GitHub repository.
-
----
-
-**Note**: This README is auto-generated based on the repository structure and build configuration. For detailed API documentation, configuration options, and usage examples, please refer to the source code and Spring AI documentation.
