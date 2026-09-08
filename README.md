@@ -9,7 +9,7 @@ This repository contains two primary modules:
 - **mcp-server**: A Spring Boot application that implements the Model Context Protocol server-side, enabling secure resource sharing and AI model integration with OAuth2 authorization.
 - **mcp-client**: A Spring Boot web application that serves as a chatbot client, consuming MCP server resources with OAuth2 client authentication and Ollama AI model integration.
 
-NOTE: DEMO CREDENTIALS ARE AS FOLLOS:
+NOTE: DEMO CREDENTIALS ARE AS FOLLOWS:
 
 username: demo@example.com
 password: password123
